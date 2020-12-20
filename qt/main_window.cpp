@@ -23,8 +23,10 @@
 #include <memory>
 #include <QTimer>
 
-#define HEADER_ADDRESS_WIDTH 80
-#define HEADER_HEX_WIDTH 340
+#define HEADER_ADDRESS_WIDTH 90
+#define HEADER_HEX_WIDTH 480
+#define HEADER_ASCII_WIDTH 200
+#define WINDOW_BORDER 40
 #define BUFFER_ROW_HEIGHT 20
 
 #define START_ADDRESS 0x00000000
@@ -61,6 +63,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     logger->setTextEdit(ui->logTextEdit);
 
     initBufTable();
+    setMinimumWidth(HEADER_ADDRESS_WIDTH + HEADER_HEX_WIDTH +
+        HEADER_ASCII_WIDTH + WINDOW_BORDER);
 
     prog = new Programmer(this);
     updateProgSettings();

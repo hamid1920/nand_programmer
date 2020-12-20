@@ -58,6 +58,12 @@
          <height>300</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
        <property name="autoScroll">
         <bool>true</bool>
        </property>
